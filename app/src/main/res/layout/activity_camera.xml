@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/RelativeLayout_face"
     tools:context=".CameraActivity">
 
     <FrameLayout
@@ -20,7 +21,7 @@
         android:layout_height="match_parent">
         <TextView
             android:id="@+id/orientation"
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_gravity="center"

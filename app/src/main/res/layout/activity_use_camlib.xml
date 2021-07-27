@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/RelativeLayout_face"
+    tools:context=".activity_use_camlib">
+
+    <Button
+        android:id="@+id/btn_cam_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SWAP" />
+
+    <com.otaliastudios.cameraview.CameraView
+        android:id="@+id/camera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/scroll_view"
+        android:keepScreenOn="true"
+        app:cameraPictureSizeMaxWidth="720"
+        app:cameraPictureSizeMaxHeight="720"
+        app:cameraFilter="@string/cameraview_filter_none" >
+
+    </com.otaliastudios.cameraview.CameraView>
+
+    <LinearLayout
+        android:id="@+id/circle_lin_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/scroll_view"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/image_capture"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="invisible"
+            android:src="@mipmap/ic_launcher"/>
+        <ImageView
+            android:id="@+id/btn_capture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/circle"
+            />
+    </LinearLayout>
+
+
+    <HorizontalScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="55dp"
+
+        >
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/original"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="original"/>
+            <Button
+                android:id="@+id/auto_fix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="auto_fix"/>
+
+            <Button
+                android:id="@+id/black_and_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="black_and_white"/>
+            <Button
+                android:id="@+id/brightness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="brightness"/>
+
+
+            <Button
+                android:id="@+id/documentary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="documentary"/>
+            <Button
+                android:id="@+id/fill_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="fill_light"/>
+            <Button
+                android:id="@+id/gamma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="gamma"/>
+            <Button
+                android:id="@+id/grain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="grain"/>
+            <Button
+                android:id="@+id/grayscale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="grayscale"/>
+            <Button
+                android:id="@+id/hue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="hue"/>
+            <Button
+                android:id="@+id/sepia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="sepia"/>
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+
+
+
+</RelativeLayout>
