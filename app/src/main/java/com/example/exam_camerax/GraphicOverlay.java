@@ -66,11 +66,11 @@ public class GraphicOverlay extends View {
   private boolean isImageFlipped;
   private boolean needUpdateTransformation = true;
 
-//  /**
-//   * Base class for a custom graphics object to be rendered within the graphic overlay. Subclass
-//   * this and implement the {@link Graphic#draw(Canvas)} method to define the graphics element. Add
-//   * instances to the overlay using {@link com.google.mlkit.vision.demo.GraphicOverlay#add(Graphic)}.
-//   */
+  /**
+   * Base class for a custom graphics object to be rendered within the graphic overlay. Subclass
+   * this and implement the {@link Graphic#draw(Canvas)} method to define the graphics element. Add
+   * instances to the overlay using {@link com.example.exam_camerax.GraphicOverlay#add(Graphic)}.
+   */
   public abstract static class Graphic {
     private com.example.exam_camerax.GraphicOverlay overlay;
 

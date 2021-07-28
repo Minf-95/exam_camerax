@@ -8,11 +8,13 @@
     android:id="@+id/RelativeLayout_face"
     tools:context=".activity_use_camlib">
 
-    <Button
+    <ImageView
         android:id="@+id/btn_cam_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SWAP" />
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/swapcam"
+         />
 
     <com.otaliastudios.cameraview.CameraView
         android:id="@+id/camera"
@@ -26,27 +28,115 @@
 
     </com.otaliastudios.cameraview.CameraView>
 
-    <LinearLayout
+
+    <RelativeLayout
+        android:id="@+id/effects_rel_container"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_above="@+id/circle_lin_container"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:background="#80000000"
+        android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/rabbit_effect"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/smile"
+                    />
+
+                <ImageView
+                    android:id="@+id/beard_effect"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/beard_effect"
+                    />
+
+                <ImageView
+                    android:id="@+id/glasses_effect"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/glasses"
+                    />
+
+                <ImageView
+                    android:id="@+id/hat_effect"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/hat"
+                    />
+
+
+            </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/circle_lin_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_above="@+id/scroll_view"
+        android:visibility="visible"
+        android:gravity="center_vertical"
         android:layout_marginBottom="20dp"
-        android:gravity="center"
         android:orientation="vertical">
-        <ImageView
-            android:id="@+id/image_capture"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:visibility="invisible"
-            android:src="@mipmap/ic_launcher"/>
-        <ImageView
-            android:id="@+id/btn_capture"
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/circle"
-            />
-    </LinearLayout>
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="150dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image_capture"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/ic_launcher"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/btn_capture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/circle" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/acti_use_camlib_effectContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginLeft="70dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/effect" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="편집 효과"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+
 
 
     <HorizontalScrollView
@@ -136,20 +226,224 @@
                 android:layout_marginLeft="5dp"
                 android:onClick="filter"
                 android:text="hue"/>
+
             <Button
-                android:id="@+id/sepia"
+                android:id="@+id/DUOTONE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:onClick="filter"
-                android:text="sepia"/>
+                android:text="DUOTONE"/>
+
+            <Button
+                android:id="@+id/INVERT_COLORS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="INVERT_COLORS"/>
+            <Button
+                android:id="@+id/POSTERIZE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="POSTERIZE"/>
+            <Button
+                android:id="@+id/SATURATION"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="SATURATION"/>
+            <Button
+                android:id="@+id/SHARPNESS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="SHARPNESS"/>
+            <Button
+                android:id="@+id/TEMPERATURE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="TEMPERATURE"/>
+            <Button
+                android:id="@+id/TINT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="TINT"/>
+
+            <Button
+                android:id="@+id/VIGNETTE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="VIGNETTE"/>
+            <Button
+                android:id="@+id/SEPIA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:onClick="filter"
+                android:text="SEPIA"/>
+
 
         </LinearLayout>
 
 
     </HorizontalScrollView>
 
+    <RelativeLayout
+        android:id="@+id/after_capture_rel_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#000000"
+        >
 
+        <ImageView
+            android:id="@+id/after_capture_user_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_launcher"
+            />
+
+        <RelativeLayout
+            android:id="@+id/after_effects_rel_container"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_above="@+id/after_saveBack_container"
+            android:background="#80000000"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/after_rabbit_effect"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/smile" />
+
+                <ImageView
+                    android:id="@+id/after_beard_effect"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/beard_effect" />
+
+                <ImageView
+                    android:id="@+id/after_glasses_effect"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/glasses" />
+
+                <ImageView
+                    android:id="@+id/after_hat_effect"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/hat" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/after_saveBack_container"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_alignParentBottom="true"
+            android:background="#00000000"
+            android:padding="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:id="@+id/after_capture_back_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/backbtn"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17dp"
+                    android:textColor="#FFFFFF"
+                    android:text="뒤로가기"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/after_capture_save_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginLeft="70dp"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/apply"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17dp"
+                    android:textColor="#FFFFFF"
+                    android:text="저장하기"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/after_capture_effect_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="70dp"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/effect"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17dp"
+                    android:textColor="#FFFFFF"
+                    android:text="효과 편집"/>
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
 
 
 </RelativeLayout>

@@ -15,7 +15,15 @@
             android:id="@+id/previewView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
+
+        <com.example.exam_camerax.GraphicOverlay
+            android:id="@+id/graphic_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
     </FrameLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
